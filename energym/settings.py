@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'energym.wsgi.application'
 # }
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://gimnasio_django_user:13PnkIcumJn96lIOBQP8rsLpVehgG9BJ@dpg-clnj45le89qs739gjke0-a.oregon-postgres.render.com/gimnasio_django'
+        default='postgres://gimnasio_django_user:13PnkIcumJn96lIOBQP8rsLpVehgG9BJ@dpg-clnj45le89qs739gjke0-a/gimnasio_django'
     )
 }
 
