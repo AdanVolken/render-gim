@@ -83,14 +83,23 @@ WSGI_APPLICATION = 'energym.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'gimnasio_django',
+#         'USER': 'gimnasio_django_user',
+#         'PASSWORD': '13PnkIcumJn96lIOBQP8rsLpVehgG9BJ',
+#         'HOST': 'dpg-clnj45le89qs739gjke0-a',  # Puedes cambiarlo si tu base de datos está en un servidor diferente
+#         'PORT': '5432',  # Puerto predeterminado de PostgreSQL
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgres://gimnasio_django_user:13PnkIcumJn96lIOBQP8rsLpVehgG9BJ@dpg-clnj45le89qs739gjke0-a.oregon-postgres.render.com/gimnasio_django'
+    )
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://gimnasio_django_user:13PnkIcumJn96lIOBQP8rsLpVehgG9BJ@dpg-clnj45le89qs739gjke0-a.oregon-postgres.render.com/gimnasio_django")
+# DATABASES['default'] = dj_database_url.parse("postgres://gimnasio_django_user:13PnkIcumJn96lIOBQP8rsLpVehgG9BJ@dpg-clnj45le89qs739gjke0-a.oregon-postgres.render.com/gimnasio_django")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
