@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Gym</title>
+    {% block extra_styles %}
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav class="navegacion">
+            <a class="navbar-a" href="{% url 'cliente' %}">Clientes</a>
+            <a class="navbar-a" href="{% url 'pagos' %}">Pagos</a>
+            <a class="navbar-a" href="{% url 'rutina' %}">Rutinas</a>
+            <a class="navbar-a" href="{% url 'ejercicios' %}">Ejercicios</a>
+        </nav>
+    </header>
+        {% block content %}
+        {% endblock %}
+    
+</body>
+</html>

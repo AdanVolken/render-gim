@@ -1,0 +1,30 @@
+{% extends  'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pagos por Día</title>
+    {% block extra_styles %}
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/pagos.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="pagos-list">
+        <h1>Lista de Pagos por Día</h1>
+
+        <ul>
+            {% for dia_con_pagos in dias_con_pagos %}
+                <li class="pago-item">
+                    <p class="fecha">Día: {{ dia_con_pagos.fecha_creacion__date }}</p>
+                    <p class="total">Total Pagos: {{ dia_con_pagos.total_pagos|default:0.0 }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* PAGINA DE CLIENTES  */
+
+.cliente-card {
+    margin: 20px;
+    padding: 15px;
+    background: linear-gradient(45deg, #0ef, #c800ff);
+    border-radius: 10px;
+    box-shadow: 4px 2px 8px #c800ff;
+}
+
+.cliente-card a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.cliente-card h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.agregar{
+    padding: 50px 50px;
+}
+
+.pagos-diarios{
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: aliceblue;
+}
+
+.pago-ir{
+    border: none;
+    outline: none;
+    width: 288px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #0ef, #c800ff);
+}
+
+.pago-ir a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* Estilos específicos para el formulario de Django sin afectar otros elementos */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: aliceblue;
+}
+
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #0ef;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #0ef;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+
+.form-error {
+    color: #ff3300;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+form button {
+    border: none;
+    outline: none;
+    width: 150px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #0ef, #c800ff);
+    color: #fff;
+}

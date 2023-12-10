@@ -1,0 +1,94 @@
+{% extends 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block extra_styles %}
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/cliente_id.css' %}">
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    <div class="cliente-id-container">
+        <div class="cliente-info">
+            <h1 class="cliente-id">Cliente : {{ cliente.nombre }} , {{ cliente.apellido }}  DNI: {{cliente.dni}}</h1>
+            <div id="boton-cliente-id">
+                <a href="{% url 'editar_cliente' cliente.id %}">
+                    <button>Editar Info</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta para Pagos -->
+    <div class="tarjeta">
+        <div class="formulario">
+            <h2>Renovar Pago</h2>
+            {{ error }}
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>
+                    Guardar
+                </button>
+            </form>
+        </div>
+        <div class="mostrar">
+            <h2>PAGOS</h2>
+            {% for pago in pagos %}
+            <h3>{{ pago.mes }} y pago: {{ pago.monto }}</h3>
+            {% endfor %}
+            <p>Monto Total de Pagos: {{ cliente.monto_total_pagos }}</p>
+        </div>
+    </div>
+
+    <!-- Tarjeta para Días -->
+    <div class="tarjeta">
+            <div class="formulario">
+                <h2>Agregar Día</h2>
+                    {{ error_dia }}
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form_dia.as_p }}
+                        <button>
+                            Guardar
+                        </button>
+                    </form>
+            </div>
+            <div class="mostrar">
+                <h2>ASISTE</h2>
+                {% for dia in dias %}
+                <h3>{{ dia.dia }} a las {{ dia.hora }}</h3>
+                {% endfor %}
+            </div>
+    </div>
+
+    <!-- Tarjeta para Rutinas -->
+    <div class="tarjeta rutinas-container-fullwidth">
+        <div class="rutinas-container">
+            <h2>Ejercicios de la Rutina</h2>
+            <div class="ejercicio-tarjetas">
+                {% for ejercicio in rutina_ejercicios %}
+                    <div class="ejercicio-tarjeta">
+                        <img src="{{ ejercicio.imagen.url }}" alt="" enctype="multipart/form-data">
+                        <p>{{ ejercicio.nombre }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        <button class = "descargar-pdf" id="descargar-pdf">Descargar Rutina</button>
+
+        <script>
+            // Agrega este script para manejar la descarga del PDF
+            document.getElementById('descargar-pdf').addEventListener('click', function() {
+                window.location.href = "{% url 'descargar_pdf' cliente.id %}";
+            });
+        </script>
+{% endblock %}
+</body>
+</html>

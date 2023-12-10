@@ -1,0 +1,42 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block extra_styles %}
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ejercicio.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <section id="tarjetas">
+        <div class="contenedor">
+            <h1>Ejercicios </h1>
+            <div class="contenedor-tarjetas">
+                
+                {% for ejercicio in ejercicios %}
+                <div class="tarjeta">
+                    <img class="ejercicios-img" src="{{ ejercicio.imagen.url }}" alt="" enctype="multipart/form-data">
+                    <h3>{{ ejercicio.nombre }}</h3>
+                    <a href="{% url 'editar_ejercicio' ejercicio.id %}"><button type="submit">
+                        Editar
+                    </button></a>
+                </div>
+                {% endfor %}
+                
+            </div>
+            <a class="agregar" href="{% url 'agregar_ejercicio' %}">    
+                <button class = "boton">
+                    Agregar Ejercicios
+                </button>
+            </a>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+</html>

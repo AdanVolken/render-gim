@@ -1,0 +1,37 @@
+/* PAGINAS DE PAGOS */
+.pagos-list {
+    margin: 20px;
+    text-decoration: none;
+
+}
+
+.pagos-list ul {
+    padding: 0;
+    text-align: center;
+}
+.pago-item {
+    padding: 15px ;
+    background: linear-gradient(45deg, #0ef, #c800ff);
+    border-radius: 10px;
+    box-shadow: 4px 2px 8px #c800ff;
+    margin-bottom: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.pago-item p {
+    margin: 0;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.pago-item .fecha {
+    font-weight: bold;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.pago-item .total {
+    color: #000000;
+    text-decoration: none;
+}

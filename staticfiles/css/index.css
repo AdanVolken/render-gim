@@ -1,0 +1,118 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 30px;
+    max-width: 600px;
+}
+
+#logo {
+    padding-top: 10px;
+    height: 60px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header{
+    background-image: url('/media/global/hero-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+header ul{
+    display: flex;
+}
+
+header ul li {
+    margin: 0 20px;
+}
+
+header ul li a{
+    color: #fff;
+}
+
+.titular{
+    text-align: center;
+    margin-top: 40vh;
+    color: #fff;
+}
+
+h1{
+    font-size: 80px;
+    font-style: italic;
+    width: 80%;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    border: black;
+}
+
+#horarios {
+    background: #F6F6F6;
+    margin-top: -100px;
+    padding-top: -200px;
+}
+
+.blanco, th {
+    background: #fff;
+}
+
+th {
+    padding: 20px 0;
+    font-style: italic;
+}
+
+td {
+    padding: 30px 0;
+}
+
+th , td {
+    border: 1px solid #d3d3d3; /* Añade un borde a las celdas */
+    text-align: center; /* Centra el texto en las celdas */
+}
+
+.gris {
+    background: #E8E8E8;
+}
+
+.turno {
+    font-style: italic;
+}
+
+h2 {
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    font-size: 60px;
+    padding-top: 30px;
+}

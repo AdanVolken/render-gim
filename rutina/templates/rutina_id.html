@@ -1,0 +1,31 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block extra_styles %}
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/ejercicio.css' %}">
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+<h1>{{ rutina.nombre }}</h1>
+
+{% for ejercicio in ejercicios %}
+    <h1>{{ ejercicio.nombre }}</h1>
+    <img src="{{ ejercicio.imagen.url }}" alt="">
+{% endfor %}
+
+<a href="{% url 'editar_rutina' rutina.id %}">
+    <button>
+        Editar
+    </button>
+</a>
+{% endblock %}
+</body>
+</html>

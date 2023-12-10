@@ -1,0 +1,9 @@
+<h1> Editar Rutina</h1>
+
+
+<form action="{% url 'actualizar_rutina' rutina.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+     <button type="submit">Guardar</button>
+   
+</form>

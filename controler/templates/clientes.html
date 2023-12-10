@@ -1,0 +1,42 @@
+{% extends  'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cliente.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+      <h1>Lista de Clientes</h1>
+
+      {% for cliente in clientes %}
+      <div class="cliente-card">
+        <a href="{% url 'cliente_detail' id=cliente.id %}">
+          <h2>{{ cliente.nombre }} {{ cliente.apellido }}</h2>
+        </a>
+      </div>
+    {% endfor %}
+      <div class="pagos-diarios">
+        <p>Suma de pagos hoy: {{ suma_pagos|default:"No hay pagos" }}</p>
+        <button class="pago-ir"><a href="{% url 'pagos' %}">Ver Pagos</a></button>
+    </div>
+
+    <div>
+      <h2>Nuevo Cliente</h2>
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+          Guardar
+        </button>
+      </form>
+    </div>
+  {% endblock %}
+</body>
+</html>

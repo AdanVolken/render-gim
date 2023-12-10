@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <!-- fuente de letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <div class="contenedor">
+        <div class="menu">
+            <a href="{% url 'sesion' %}"><img id="logo" src="{% static 'global/pngwing.com.png' %}" alt=""></a>
+            <nav>
+                <ul>
+                    <li><a href=""><img src="{% static 'global/face.png' %}" alt=""></li></a>
+                    <li><a href=""><img src="{% static 'global/ig.png' %}" alt=""></li></a>
+                    <li><a href=""><img src="{% static 'global/wsp.png'  %}" alt=""></li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="titular">
+        <h1>Gimnasio Pesas147</h1>
+    </div>
+</header>
+
+<section id="horarios">
+    <div class="contenedor">
+        <h2>Horarios</h2>
+        <table>
+            <th>Dias</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <tr class="gris">
+                <td class="turno">7:00 - 8:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="blanco">
+                <td class="turno">9:00 - 10:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="gris">
+                <td class="turno">10:00 - 11:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="blanco">
+                <td class="turno">14:00 - 15:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="gris">
+                <td class="turno">15:00 - 16:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="blanco">
+                <td class="turno"> 18:00 - 19:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>

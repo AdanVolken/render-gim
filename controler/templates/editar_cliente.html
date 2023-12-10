@@ -1,0 +1,10 @@
+<div>
+
+    <h1> Editar cliente</h1>
+    
+    <form action="{% url 'actualizar_cliente' cliente.id %}" method="POST">
+        {% csrf_token %}
+        {{ actualizar_cliente.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</div>

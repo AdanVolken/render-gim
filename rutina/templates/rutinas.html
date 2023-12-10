@@ -1,0 +1,37 @@
+{% extends 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block extra_styles %}
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/rutinas.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <h1>Rutinas</h1>
+
+        <div class="rutinas-list">
+            {% for rutina in rutinas %}
+                <h1 class="rutina-title">
+                    <a href="{% url 'rutina_id' id=rutina.id %}">{{ rutina.nombre }}</a>
+                </h1>
+            {% endfor %}
+        </div>
+        <div>
+            <h2>Nueva Rutina</h2>
+            <form action="" method="POST">
+              {% csrf_token %}
+              {{ form_rutina.as_p }}
+              <button type="submit">
+                Guardar
+              </button>
+            </form>
+          </div>
+    {% endblock %}
+</body>
+</html>
